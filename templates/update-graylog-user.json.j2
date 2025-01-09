@@ -1,0 +1,28 @@
+{
+  "email": "{{ username }}@test.org",
+  "first_name":"{{ username }}",
+  "last_name":"{{ username }}",
+  "permissions": [
+    "users:edit:{{ username }}",
+    "users:passwordchange:{{ username }}",
+    "clusterconfigentry:read",
+    "indexercluster:read",
+    "messagecount:read",
+    "journal:read",
+    "messages:analyze",
+    "inputs:read",
+    "metrics:read",
+    "savedsearches:edit",
+    "fieldnames:read",
+    "buffers:read",
+    "system:read",
+    "savedsearches:create",
+    "jvmstats:read",
+    "decorators:read",
+    "throughput:read",
+    "savedsearches:read",
+    "messages:read"
+  ],
+  "roles": {{ roles }},
+  "session_timeout_ms": 3600000
+}
