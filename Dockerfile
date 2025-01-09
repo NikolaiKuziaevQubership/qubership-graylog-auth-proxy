@@ -1,13 +1,15 @@
 FROM python:3.13.0-alpine3.20
 
+# Copy requirements to install them
+COPY requirements.txt /etc/requirements.txt
+
+# Copy source code
 COPY graylog_auth_proxy.py /usr/src/app/
 COPY common /usr/src/app/common
 COPY config /usr/src/app/config
 COPY ldap_auth_handler /usr/src/app/ldap_auth_handler
 COPY oauth_handler /usr/src/app/oauth_handler
 COPY templates /usr/src/app/templates
-COPY requirements.txt /etc/requirements.txt
-COPY pip.conf /etc/pip.conf
 
 WORKDIR /usr/src/app/
 
