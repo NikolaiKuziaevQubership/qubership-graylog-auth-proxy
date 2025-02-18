@@ -43,6 +43,7 @@ class OAuthHTTPClient:
 
     def login(self):
         client = WebApplicationClient(self.params.client_id)
+        oauth_session_data.clear()
         oauth_session_data['state'] = secrets.token_urlsafe(16)
 
         url_to_redirect = client.prepare_request_uri(
